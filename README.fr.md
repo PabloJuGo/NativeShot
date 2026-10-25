@@ -70,7 +70,7 @@ NativeShot s’installe dans la barre des menus et remplace l’outil de capture
 
 ## Installation
 
-1. Téléchargez **`NativeShot-1.0.0.dmg`** depuis la [dernière version](https://github.com/PabloJuGo/NativeShot/releases/latest).
+1. Téléchargez **`NativeShot-<version>.dmg`** depuis la [dernière version](https://github.com/PabloJuGo/NativeShot/releases/latest).
 2. Ouvrez-le et faites glisser **NativeShot** dans **Applications**.
 3. Ouvrez NativeShot. La première fois, macOS indique qu’il ne peut pas vérifier le développeur, car l’app est gratuite et n’est pas notarisée par Apple. Pour l’ouvrir quand même :
    - ouvrez **Réglages Système › Confidentialité et sécurité**, faites défiler jusqu’au message concernant NativeShot, cliquez sur **Ouvrir quand même** et confirmez ;

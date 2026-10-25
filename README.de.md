@@ -70,7 +70,7 @@ NativeShot sitzt in der Menüleiste und ersetzt das Bildschirmfoto-Werkzeug des 
 
 ## Installation
 
-1. Laden Sie **`NativeShot-1.0.0.dmg`** aus der [neuesten Version](https://github.com/PabloJuGo/NativeShot/releases/latest) herunter.
+1. Laden Sie **`NativeShot-<version>.dmg`** aus der [neuesten Version](https://github.com/PabloJuGo/NativeShot/releases/latest) herunter.
 2. Öffnen Sie die Datei und ziehen Sie **NativeShot** in **Programme**.
 3. Öffnen Sie NativeShot. Beim ersten Start meldet macOS, dass der Entwickler nicht überprüft werden kann, weil die App kostenlos und nicht von Apple notarisiert ist. So öffnen Sie sie trotzdem:
    - Gehen Sie zu **Systemeinstellungen › Datenschutz & Sicherheit**, scrollen Sie zur Meldung zu NativeShot, klicken Sie auf **Dennoch öffnen** und bestätigen Sie.

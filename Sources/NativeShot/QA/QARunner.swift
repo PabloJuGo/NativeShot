@@ -757,6 +757,20 @@ final class QARunner {
         check(app.qaLastCapture?.id != before, "La captura se hace igualmente")
         await app.library.refresh()
         check(app.library.recent.first?.id == first, "No aparece en la biblioteca")
+        // Recordings too: they go to the save folder, never to the library.
+        let saved = Set((try? FileManager.default.contentsOfDirectory(atPath: Prefs.saveFolderURL.path)) ?? [])
+        let rec = app.recorder
+        rec.qaSet(source: .region(f.content, display: mainDisplay))
+        rec.start()
+        if await waitUntil(10, { rec.phase == .recording }) {
+            try await Task.sleep(for: .seconds(2))
+            rec.stop()
+            _ = await waitUntil(20) { rec.phase == .ready || rec.phase == .idle }
+            await app.library.refresh()
+            check(app.library.recent.first?.id == first, "La grabación tampoco aparece en la biblioteca")
+            let now = Set((try? FileManager.default.contentsOfDirectory(atPath: Prefs.saveFolderURL.path)) ?? [])
+            check(now.subtracting(saved).contains { $0.hasSuffix(".mp4") }, "La grabación se guarda en la carpeta elegida")
+        } else { check(false, "La grabación arranca en sesión privada") }
         app.privateSession = false
     }
 

@@ -5,8 +5,8 @@ extension Library {
     /// Moves a finished recording from recovery/ into the library (atomic rename, same volume) and indexes it.
     func addVideo(id: UUID, from temp: URL, info: MovieInfo) async throws -> URL {
         let rel = "originals/\(id.uuidString)/source.mp4"
-        let keep = UserDefaults.standard.bool(forKey: Prefs.keepHistory)
-        // Without history a recording still has to land somewhere the user can find it: the save folder.
+        let keep = storesHistory
+        // Without history (or in a private session) a recording still has to land somewhere the user can find it: the save folder.
         let dest = keep ? root.appendingPathComponent(rel)
             : FileNamingPolicy.uniqueURL(in: Prefs.saveFolderURL,
                                          name: FileNamingPolicy.default.name(date: Date(), type: "recording", ext: "mp4"))

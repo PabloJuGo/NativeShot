@@ -70,7 +70,7 @@ NativeShot lives in your menu bar and replaces the system screenshot tool with s
 
 ## Install
 
-1. Download **`NativeShot-1.0.0.dmg`** from the [latest release](https://github.com/PabloJuGo/NativeShot/releases/latest).
+1. Download **`NativeShot-<version>.dmg`** from the [latest release](https://github.com/PabloJuGo/NativeShot/releases/latest).
 2. Open it and drag **NativeShot** to **Applications**.
 3. Open NativeShot. The first time, macOS will say it cannot verify the developer, because the app is free and not notarized by Apple. To open it anyway:
    - open **System Settings › Privacy & Security**, scroll down and click **Open Anyway** next to the NativeShot message, then confirm;
