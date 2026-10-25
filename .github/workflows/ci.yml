@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  build-test:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build (debug)
+        run: swift build
+      - name: Test
+        run: swift test
+      - name: Bundle (release, unsigned ad-hoc)
+        run: scripts/bundle.sh release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NativeShot-unsigned
+          path: build/NativeShot.app
