@@ -7,7 +7,7 @@ Build: release con `-DNATIVESHOT_QA`, firmada con la identidad local «NativeSho
 
 `scripts/selftest.sh` lanza la app real con `--qa-selftest`. Usa los permisos reales (Grabación de pantalla, Micrófono, Cámara y Accesibilidad), ScreenCaptureKit y ventanas reales. La entrada es sintética (CGEvent: atajos, arrastres, clics, rueda y teclas) y la verificación es programática: píxeles, OCR de lo exportado, pistas y picos de audio, filas de la imagen unida y árbol de accesibilidad. Un proceso aparte con otro bundle id (`NSQAFixture.app`) muestra contenido conocido: cuadrantes de color, texto con tildes, un QR, una lista de 120 filas, una animación con un tono de 880 Hz y un editor de texto enriquecido. El autotest usa una biblioteca aislada y nunca toca la del usuario.
 
-Resultado final (versión 1.0.0): **36/36 pasos en verde** (`/tmp/nsqa/full8/report.md`, con capturas de cada superficie en claro y oscuro). Los 6 pasos nuevos cubren varias regiones con ⌘, pantalla congelada, sesión privada, pin bloqueado, la ventana de texto reconocido y el gestor de exportación.
+Resultado final (versión 1.0.2): **37/37 pasos en verde** (`/tmp/nsqa/full9/report.md`, con capturas de cada superficie en claro y oscuro). El paso MENU recorre el menú de la barra con clics reales. Los 6 pasos nuevos cubren varias regiones con ⌘, pantalla congelada, sesión privada, pin bloqueado, la ventana de texto reconocido y el gestor de exportación.
 
 ## Casos de `docs/QA-manual.md`
 
@@ -92,6 +92,9 @@ Son eventos sintéticos en un M4 enchufado: una sola máquina, sin Intel y sin c
 9. Los vídeos aparecían sin miniatura en la biblioteca.
 10. ⌘+ y ⌘− no hacían zoom en los pines.
 11. Con el atajo por defecto (⌃⌥⌘4) el ⌘ seguía pulsado al arrastrar y la selección entraba en modo «varias regiones» sin querer: soltar no capturaba. Ahora ⌘ solo añade regiones si se pulsa después de abrir el overlay.
+12. **Ajustes…** desde el menú de la barra abría la ventana detrás de la app activa (lo detectó el usuario; los pasos anteriores llamaban a la función directamente y no al menú). Ahora el paso MENU hace clic de verdad en cada elemento del menú que abre una ventana.
+13. **Abrir vídeo en el editor…** mostraba el diálogo de abrir detrás de las demás apps.
+14. Las grabaciones en sesión privada se guardaban en la biblioteca (1.0.1).
 
 Todos tienen un paso del autotest, y los del Kit (3, 4 y 5) además un test de regresión.
 

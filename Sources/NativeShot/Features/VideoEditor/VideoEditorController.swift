@@ -46,6 +46,7 @@ final class VideoEditorController: NSObject, NSWindowDelegate {
 
     /// Menu entry: pick an MP4 from the library (or a saved project).
     static func openWithPanel(library: Library) {
+        NSApp.activate() // from the menu bar the app is not active, and the panel would open behind the frontmost app
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.canChooseDirectories = true // .nshotvideo is a package directory

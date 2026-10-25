@@ -44,7 +44,7 @@ struct MenuBarContent: View {
         Divider()
         Toggle(isOn: Binding(get: { app.privateSession }, set: { _ in app.perform(.togglePrivateSession) })) { item("Sesión privada (sin historial)", .togglePrivateSession) }
         Divider()
-        SettingsLink { Text("Ajustes…") }.keyboardShortcut(",")
+        Button("Ajustes…") { app.openSettings() } // not SettingsLink: it leaves the window behind the frontmost app
         Button("Buscar actualizaciones…") { app.checkForUpdates() }
         Button("Ayuda y diagnóstico…") { HelpWindow.show(app: app) }
         Button("Salir de NativeShot") { NSApp.terminate(nil) }.keyboardShortcut("q")

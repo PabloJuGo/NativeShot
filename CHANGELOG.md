@@ -1,8 +1,15 @@
 # Registro de cambios
 
-**English summary:** All notable changes are listed here, newest first (1.0.1 fixes recordings being kept in the library during a private session), following "Keep a Changelog". `1.0.0` is the first public release: region/window/full-screen/scrolling capture, floating thumbnails and pins, on-device OCR/QR with a result window, a screen/video recorder and editor, an image editor, a local searchable library with tags, an export manager, global shortcuts, a private session mode and an optional, disabled-by-default `nativeshot://` scheme. Everything works offline; there is no telemetry. NativeShot is licensed under GPL-3.0. Details below, in Spanish.
+**English summary:** All notable changes are listed here, newest first (1.0.2 fixes Settings… and «Open video» opening behind other apps; 1.0.1 fixes recordings being kept in the library during a private session), following "Keep a Changelog". `1.0.0` is the first public release: region/window/full-screen/scrolling capture, floating thumbnails and pins, on-device OCR/QR with a result window, a screen/video recorder and editor, an image editor, a local searchable library with tags, an export manager, global shortcuts, a private session mode and an optional, disabled-by-default `nativeshot://` scheme. Everything works offline; there is no telemetry. NativeShot is licensed under GPL-3.0. Details below, in Spanish.
 
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y las versiones, [SemVer](https://semver.org/lang/es/).
+
+## [1.0.2] - 2026-10-25
+
+### Corregido
+
+- **Ajustes…** en el menú de la barra abría la ventana detrás de la app que estuviera delante, así que parecía que no hacía nada.
+- **Abrir vídeo en el editor…** mostraba el diálogo de abrir detrás de las demás apps.
 
 ## [1.0.1] - 2026-10-25
 
